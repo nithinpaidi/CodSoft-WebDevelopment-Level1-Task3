@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        margin: 0;
+    }
+
+    form {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="textfield"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        text-align: right;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="button"] {
+        width: 23%;
+        padding: 10px;
+        margin: 1%;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    input[type="button"]:hover {
+        background: #ddd;
+    }
+
+    input[type="button"]:active {
+        background: #ccc;
+    }
+
+    .operator {
+        background: #f9a825;
+        color: white;
+    }
+
+    .operator:hover {
+        background: #fbc02d;
+    }
+
+    .clear {
+        background: #e53935;
+        color: white;
+    }
+
+    .clear:hover {
+        background: #ef5350;
+    }
+
+    .equals {
+        background: #43a047;
+        color: white;
+    }
+
+    .equals:hover {
+        background: #66bb6a;
+    }
+</style>
+<script>
+function n(){
+    text = document.calculator.ns.value;
+    document.calculator.ns.value = text.slice(0, -1);
+}
+</script>
+</head>
+<body>
+<form name="calculator">
+    <input type="textfield" name="ns" value="">
+    <br>
+    <input type="button" value="C" onclick="document.calculator.ns.value=''" class="clear">
+    <input type="button" value="X" onclick="n()" class="clear">
+    <input type="button" value="/" onclick="document.calculator.ns.value+='/'" class="operator">
+    <input type="button" value="" onclick="document.calculator.ns.value+=''" class="operator">
+    <input type="button" value="-" onclick="document.calculator.ns.value+='-'" class="operator">
+    <input type="button" value="+" onclick="document.calculator.ns.value+='+'" class="operator">
+    <input type="button" value="=" onclick="document.calculator.ns.value=eval(document.calculator.ns.value)" class="equals">
+    <br>
+    <input type="button" value="7" onclick="document.calculator.ns.value+='7'">
+    <input type="button" value="8" onclick="document.calculator.ns.value+='8'">
+    <input type="button" value="9" onclick="document.calculator.ns.value+='9'">
+    <br>
+    <input type="button" value="4" onclick="document.calculator.ns.value+='4'">
+    <input type="button" value="5" onclick="document.calculator.ns.value+='5'">
+    <input type="button" value="6" onclick="document.calculator.ns.value+='6'">
+    <br>
+    <input type="button" value="1" onclick="document.calculator.ns.value+='1'">
+    <input type="button" value="2" onclick="document.calculator.ns.value+='2'">
+    <input type="button" value="3" onclick="document.calculator.ns.value+='3'">
+    <br>
+    <input type="button" value="0" onclick="document.calculator.ns.value+='0'" style="width: 48%">
+    <input type="button" value="." onclick="document.calculator.ns.value+='.'">
+</form>
+</body>
+</html>
